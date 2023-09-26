@@ -31,7 +31,12 @@ jobs:
       - name: Set Django SECRET_KEY
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        run: echo "SECRET_KEY=${SECRET_KEY}" >> .env
+        run: |
+          echo "SECRET_KEY=${SECRET_KEY}" >> .env
+          cat .env
+
+      - name: Debug SECRET_KEY
+        run: echo "SECRET_KEY: ${{ secrets.SECRET_KEY }}"
 
       - name: Run Tests
         run: |
