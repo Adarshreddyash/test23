@@ -28,13 +28,14 @@ jobs:
       #   run: |
       #     python manage.py migrate
 
-      - name: Set Django SECRET_KEY
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        run: |
-          cd mysite
-          echo "SECRET_KEY=${SECRET_KEY}" >> .env
-          cat .env
+      # - name: Set Django SECRET_KEY
+      #   env:
+      #     SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      #   run: |
+      #     cd mysite
+      #     echo "SECRET_KEY=${SECRET_KEY}" >> .env
+      #     cat .env
+      
       - name: Create .env File
         run: |
          cd mysite
