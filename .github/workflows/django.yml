@@ -34,6 +34,10 @@ jobs:
         run: |
           echo "SECRET_KEY=${SECRET_KEY}" >> .env
           cat .env
+      - name: Create .env File
+        run: |
+         echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
+         # Add other environment variables as needed
 
       - name: Debug SECRET_KEY
         run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }}
