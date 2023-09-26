@@ -35,4 +35,5 @@ jobs:
 
       - name: Run Tests
         run: |
+          cd mysite
           python manage.py test
