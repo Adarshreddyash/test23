@@ -32,10 +32,12 @@ jobs:
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
+          cd mysite
           echo "SECRET_KEY=${SECRET_KEY}" >> .env
           cat .env
       - name: Create .env File
         run: |
+         cd mysite
          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" > .env
          # Add other environment variables as needed
 
